@@ -21,9 +21,13 @@ test:
 
 .PHONY: build
 build:
-	docker build --no-cache  -t python_api:latest -f docker/Dockerfile .  
+	docker-compose -f docker/docker-compose.yml build  
 
 .PHONY: run
 run:
 	docker run -e MAX_WORKERS=2 -p 80:80 python_api
+
+.PHONY: up
+up: 
+	docker-compose -f docker/docker-compose.yml up
 
