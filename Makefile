@@ -21,7 +21,7 @@ test:
 
 .PHONY: build
 build:
-	docker build -t python_api:latest -f docker/Dockerfile . 
+	docker build --no-cache  -t python_api:latest -f docker/Dockerfile .  
 
 .PHONY: run
 run:

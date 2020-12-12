@@ -230,7 +230,7 @@ python-versions = "*"
 
 [[package]]
 name = "packaging"
-version = "20.7"
+version = "20.8"
 description = "Core utilities for Python packages"
 category = "dev"
 optional = false
@@ -276,7 +276,7 @@ virtualenv = ">=20.0.8"
 
 [[package]]
 name = "py"
-version = "1.9.0"
+version = "1.10.0"
 description = "library with cross-python path, ini-parsing, io, code, log facilities"
 category = "dev"
 optional = false
@@ -413,7 +413,7 @@ python-versions = "*"
 
 [[package]]
 name = "uvicorn"
-version = "0.13.0"
+version = "0.13.1"
 description = "The lightning-fast ASGI server."
 category = "main"
 optional = false
@@ -580,8 +580,8 @@ nodeenv = [
     {file = "nodeenv-1.5.0.tar.gz", hash = "sha256:ab45090ae383b716c4ef89e690c41ff8c2b257b85b309f01f3654df3d084bd7c"},
 ]
 packaging = [
-    {file = "packaging-20.7-py2.py3-none-any.whl", hash = "sha256:eb41423378682dadb7166144a4926e443093863024de508ca5c9737d6bc08376"},
-    {file = "packaging-20.7.tar.gz", hash = "sha256:05af3bb85d320377db281cf254ab050e1a7ebcbf5410685a9a407e18a1f81236"},
+    {file = "packaging-20.8-py2.py3-none-any.whl", hash = "sha256:24e0da08660a87484d1602c30bb4902d74816b6985b93de36926f5bc95741858"},
+    {file = "packaging-20.8.tar.gz", hash = "sha256:78598185a7008a470d64526a8059de9aaa449238f280fc9eb6b13ba6c4109093"},
 ]
 pbr = [
     {file = "pbr-5.5.1-py2.py3-none-any.whl", hash = "sha256:b236cde0ac9a6aedd5e3c34517b423cd4fd97ef723849da6b0d2231142d89c00"},
@@ -596,8 +596,8 @@ pre-commit = [
     {file = "pre_commit-2.9.3.tar.gz", hash = "sha256:ee784c11953e6d8badb97d19bc46b997a3a9eded849881ec587accd8608d74a4"},
 ]
 py = [
-    {file = "py-1.9.0-py2.py3-none-any.whl", hash = "sha256:366389d1db726cd2fcfc79732e75410e5fe4d31db13692115529d34069a043c2"},
-    {file = "py-1.9.0.tar.gz", hash = "sha256:9ca6883ce56b4e8da7e79ac18787889fa5206c79dcc67fb065376cd2fe03f342"},
+    {file = "py-1.10.0-py2.py3-none-any.whl", hash = "sha256:3b80836aa6d1feeaa108e046da6423ab8f6ceda6468545ae8d02d9d58d18818a"},
+    {file = "py-1.10.0.tar.gz", hash = "sha256:21b81bda15b66ef5e1a777a21c4dcd9c20ad3efd0b3f817e7a809035269e1bd3"},
 ]
 pycodestyle = [
     {file = "pycodestyle-2.6.0-py2.py3-none-any.whl", hash = "sha256:2295e7b2f6b5bd100585ebcb1f616591b652db8a741695b3d8f5d28bdc934367"},
@@ -712,8 +712,8 @@ typing-extensions = [
     {file = "typing_extensions-3.7.4.3.tar.gz", hash = "sha256:99d4073b617d30288f569d3f13d2bd7548c3a7e4c8de87db09a9d29bb3a4a60c"},
 ]
 uvicorn = [
-    {file = "uvicorn-0.13.0-py3-none-any.whl", hash = "sha256:5123606e0f1d15ffbe0f63161c5078f7c28f350c5eb102435671eae58046db0f"},
-    {file = "uvicorn-0.13.0.tar.gz", hash = "sha256:28420526640d800aabe648038f8e2ea8ba2a8bdc363002eecd5dfc57a0f75ab7"},
+    {file = "uvicorn-0.13.1-py3-none-any.whl", hash = "sha256:6fcce74c00b77d4f4b3ed7ba1b2a370d27133bfdb46f835b7a76dfe0a8c110ae"},
+    {file = "uvicorn-0.13.1.tar.gz", hash = "sha256:2a7b17f4d9848d6557ccc2274a5f7c97f1daf037d130a0c6918f67cd9bc8cdf5"},
 ]
 uvloop = [
     {file = "uvloop-0.14.0-cp35-cp35m-macosx_10_11_x86_64.whl", hash = "sha256:08b109f0213af392150e2fe6f81d33261bb5ce968a288eb698aad4f46eb711bd"},

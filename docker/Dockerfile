@@ -1,25 +1,27 @@
-FROM python:3.8-slim as base
+FROM python:3.8 AS builder
 
-RUN apt-get update; apt-get install -y curl
+LABEL maintainer="Lounes ACHAB <achab.lounes@gmail.com>"
 
-LABEL maintainer="Lounès ACHAB <achab.lounes@gmail.com>"
-
-# Install Poetry
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | POETRY_HOME=/opt/poetry python && \
-    cd /usr/local/bin && \
-    ln -s /opt/poetry/bin/poetry && \
-    poetry config virtualenvs.create false
-
-FROM base
- 
-WORKDIR /app/
-ENV PYTHONPATH=/app
+WORKDIR /app
 
 COPY poetry.lock pyproject.toml ./
+
+# Install Poetry
+RUN pip install --no-cache-dir poetry && \
+    poetry config virtualenvs.in-project true && \
+    poetry install --no-dev
+
+FROM python:3.8-slim
+
+WORKDIR /app/
+
+# copy only the dependencies installation from the 1st stage image
+COPY --from=builder /app/.venv/ ./.venv/
+
+ENV VIRTUAL_ENV=/app/.venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
 COPY ./gunicorn_conf.py /gunicorn_conf.py
-
-RUN poetry install --no-dev
-
 COPY ./src/scripts/start.sh /start.sh
 COPY ./src/app /app
 
