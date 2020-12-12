@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir poetry && \
     poetry config virtualenvs.in-project true && \
     poetry install --no-dev
 
-FROM python:3.8-slim
+FROM python:3.8-alpine
 
 WORKDIR /app/
 
@@ -21,7 +21,7 @@ COPY --from=builder /app/.venv/ ./.venv/
 ENV VIRTUAL_ENV=/app/.venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-COPY ./gunicorn_conf.py /gunicorn_conf.py
+COPY ./src/config/gunicorn_conf.py /gunicorn_conf.py
 COPY ./src/scripts/start.sh /start.sh
 COPY ./src/app /app
 
