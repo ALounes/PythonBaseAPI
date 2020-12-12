@@ -18,3 +18,12 @@ debug:
 .PHONY: test
 test:
 	poetry run pytest src/tests
+
+.PHONY: build
+build:
+	docker build -t python_api:latest -f docker/Dockerfile . 
+
+.PHONY: run
+run:
+	docker run -e MAX_WORKERS=2 -p 80:80 python_api
+
