@@ -7,21 +7,5 @@ services:
       network: host
     ports:
       - "80:80"
-    depends_on:
-      - cache
-      - db
-      - blob
     environment:
-      MAX_WORKERS: 5
-  cache:
-    image: redis:alpine
-  db:
-    image: postgres:alpine
-  blob:
-    image: minio/minio
-    command: ["server", "/data"]
-    ports:
-      - "9000:9000"
-    environment:
-      MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY}
-      MINIO_SECRET_KEY: ${MINIO_SECRET_KEY}
+      MAX_WORKERS: 1

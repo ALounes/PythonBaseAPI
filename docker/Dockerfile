@@ -1,4 +1,4 @@
-FROM python:3.8 AS builder
+FROM python:3.9 AS builder
 
 LABEL maintainer="Lounes ACHAB <achab.lounes@gmail.com>"
 
@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir poetry && \
     poetry config virtualenvs.in-project true && \
     poetry install --no-dev
 
-FROM python:3.8-alpine
+FROM python:3.9-alpine
 
 WORKDIR /app/
 
